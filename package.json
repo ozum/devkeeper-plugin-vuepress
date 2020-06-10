@@ -1,0 +1,63 @@
+{
+  "name": "devkeeper-plugin-vuepress",
+  "description": "VuePress plugin for devkeeper",
+  "version": "1.0.0",
+  "author": "Özüm Eldoğan @ozum",
+  "bugs": "https://github.com/ozum/devkeeper-plugin-vuepress/issues",
+  "dependencies": {
+    "@oclif/command": "^1.6.1",
+    "@oclif/config": "^1.15.1",
+    "@vuepress/plugin-active-header-links": "^1.4.1",
+    "@vuepress/plugin-google-analytics": "^1.4.1",
+    "@vuepress/plugin-pwa": "^1.4.1",
+    "tslib": "^2.0.0",
+    "vuepress": "^1.4.1",
+    "vuepress-bar": "^0.3.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@oclif/plugin-help": "^3.1.0",
+    "@types/node": "^14.0.13",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "globby": "^11.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "peerDependencies": {
+    "intermodular": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=10.8.0"
+  },
+  "files": [
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/yarn.lock"
+  ],
+  "homepage": "https://github.com/ozum/devkeeper-plugin-vuepress",
+  "keywords": [
+    "oclif-plugin"
+  ],
+  "license": "MIT",
+  "oclif": {
+    "commands": "./lib/commands",
+    "hooks": {
+      "update": "./lib/hooks/deneme"
+    },
+    "bin": "oclif-example",
+    "devPlugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "ozum/devkeeper-plugin-vuepress",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
