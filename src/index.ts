@@ -1,7 +1,8 @@
-export default {}
+export { handler as vuepress} from "./commands/vuepress"
 
-const init = function (x: any) {
-  console.log(x)
-}
 
-export {init}
+
+
+
+
+
